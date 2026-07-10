@@ -1,6 +1,8 @@
 # ⚖️ Painel Estatístico da Justiça do Trabalho (JT)
 
-Este repositório contém um dashboard interativo desenvolvido em **Streamlit** para visualização e análise de dados históricos da Justiça do Trabalho do Brasil. O projeto utiliza **uv** como gerenciador de pacotes e o formato **Parquet** como base de dados otimizada para garantir alta performance e carregamento instantâneo das informações.
+Este repositório contém um dashboard interativo desenvolvido em **Streamlit** para visualização e análise de dados históricos da Justiça do Trabalho do Brasil. 
+
+O projeto engloba todo o pipeline de dados: desde o carregamento do arquivo CSV original, passando por um processo completo de limpeza e transformação documentado em um Jupyter Notebook, até a exportação em formato **Parquet** de alto desempenho para consumo da aplicação visual.
 
 ---
 
@@ -19,14 +21,18 @@ O dashboard adota um **visual premium com tons pastéis**, suportando **alternâ
 
 ---
 
-## 📂 Estrutura do Repositório
+## 📂 Estrutura do Projeto
 
-*   [main.py](file:///home/eduardo/Projetos/Painel-JT-Gemini/main.py): Código fonte do dashboard interativo em Streamlit.
-*   [limpeza_dados.ipynb](file:///home/eduardo/Projetos/Painel-JT-Gemini/limpeza_dados.ipynb): Jupyter Notebook detalhando as etapas de análise exploratória, limpeza e conversão do CSV original de 72MB para o arquivo Parquet de 2.5MB.
-*   `data/`: Diretório contendo os conjuntos de dados:
-    *   `Base de Dados JT Historico - CSV.csv`: Base bruta original (delimitada por `;`, codificação `latin1`).
-    *   [Base_de_Dados_JT_Historico_Limpa.parquet](file:///home/eduardo/Projetos/Painel-JT-Gemini/data/Base_de_Dados_JT_Historico_Limpa.parquet): Base limpa e otimizada utilizada pelo dashboard.
-*   [pyproject.toml](file:///home/eduardo/Projetos/Painel-JT-Gemini/pyproject.toml) & [uv.lock](file:///home/eduardo/Projetos/Painel-JT-Gemini/uv.lock): Arquivos de configuração de dependências do gerenciador `uv`.
+```text
+Painel-JT/
+├── data/
+│   ├── Base de Dados JT Historico - CSV.csv  # Base bruta original (71.9 MB - ignorada pelo git)
+│   └── Base_de_Dados_JT_Historico_Limpa.parquet       # Base limpa e compactada
+├── main.py                           # Código fonte do dashboard interativoem Streamlit
+├── limpeza_dados.ipynb               # Jupyter Notebook com a pipeline de ETL detalhada
+├── pyproject.toml                    # Arquivo de configuração de projeto e dependências (PEP 621)
+└── README.md                         # Este guia explicativo
+```
 
 ---
 
